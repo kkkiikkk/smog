@@ -30,6 +30,8 @@ gem 'slim'
 
 gem 'slim-rails'
 
+gem 'devise', '~> 4.9', '>= 4.9.4'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
