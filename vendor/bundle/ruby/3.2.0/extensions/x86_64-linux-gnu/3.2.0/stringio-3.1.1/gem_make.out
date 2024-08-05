@@ -1,0 +1,18 @@
+current directory: /home/developer/Documents/projects/ruby-tasts/smog/vendor/bundle/ruby/3.2.0/gems/stringio-3.1.1/ext/stringio
+/usr/bin/ruby3.2 -I/usr/lib/ruby/vendor_ruby extconf.rb
+creating Makefile
+
+current directory: /home/developer/Documents/projects/ruby-tasts/smog/vendor/bundle/ruby/3.2.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240805-112613-fv2jil sitelibdir\=./.gem.20240805-112613-fv2jil clean
+
+current directory: /home/developer/Documents/projects/ruby-tasts/smog/vendor/bundle/ruby/3.2.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240805-112613-fv2jil sitelibdir\=./.gem.20240805-112613-fv2jil
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/developer/Documents/projects/ruby-tasts/smog/vendor/bundle/ruby/3.2.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240805-112613-fv2jil sitelibdir\=./.gem.20240805-112613-fv2jil install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20240805-112613-fv2jil
+
+current directory: /home/developer/Documents/projects/ruby-tasts/smog/vendor/bundle/ruby/3.2.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20240805-112613-fv2jil sitelibdir\=./.gem.20240805-112613-fv2jil clean
