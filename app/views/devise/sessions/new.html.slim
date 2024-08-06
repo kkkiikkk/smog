@@ -1,0 +1,15 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "auth-form log-in-form" }) do |f|
+  .field
+    br/
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email"
+  .field
+    br/
+    = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"
+  - if devise_mapping.rememberable?
+    .field.checkbox-field
+      = f.label :remember_me, for: "remember_me"
+      = f.check_box :remember_me, id: "remember_me"
+  .actions
+    = f.submit "Log in", class: "btn-submit"
+  div 
+    = render "devise/shared/links"
