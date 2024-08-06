@@ -1,7 +1,5 @@
 class Image < ApplicationRecord
   mount_uploader :image, MediaUploader
-  mount_uploader :image, MediaUploader
-
 
   validates_processing_of :image
   validate :image_size_validation

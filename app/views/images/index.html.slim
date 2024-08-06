@@ -9,7 +9,7 @@ table
     - @images.each do |image|
       tr
         td
-          = image_tag image.image.url(:thumbnail), alt: "Image"
+          = image_tag image.image.url(:thumb), alt: "Image"
         td
           = link_to 'Show', image_path(image)
           = link_to 'Edit', edit_image_path(image)

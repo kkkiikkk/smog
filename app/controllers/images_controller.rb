@@ -8,15 +8,10 @@ class ImagesController < ApplicationController
   end
 
   def new
-    # puts params
-    # puts post_params
-
     @image = Image.new
   end
 
   def create
-    # puts params
-    # puts post_params
     @image = Image.new post_params
 
     if @image.save
