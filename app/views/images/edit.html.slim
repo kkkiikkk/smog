@@ -1,0 +1,12 @@
+
+h1 Edit Image
+
+= form_for @image, html: { class: 'image-form' } do |f|
+  .form-group
+    = f.label :image, 'Upload New Image'
+    = f.file_field :image, class: 'form-control'
+
+  .form-group
+    = f.submit 'Update Image', class: 'btn btn-primary'
+
+= link_to 'Back', images_path, class: 'btn btn-secondary'

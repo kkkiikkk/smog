@@ -1,0 +1,18 @@
+h1 Images
+
+table
+  thead
+    tr
+      th Image
+      th Actions
+  tbody
+    - @images.each do |image|
+      tr
+        td
+          = image_tag image.image.url(:thumbnail), alt: "Image"
+        td
+          = link_to 'Show', image_path(image)
+          = link_to 'Edit', edit_image_path(image)
+          = link_to 'Delete', image_path(image), method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'New Image', new_image_path, class: 'btn btn-primary'
