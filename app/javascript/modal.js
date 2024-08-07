@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('imageModal');
   const modalImage = document.getElementById('modalImage');
+  if (!modal || !modalImage) return;
   const closeButton = modal.querySelector('[close="modal"]');
 
   document.querySelectorAll('[data-toggle="modal"]').forEach(function(element) {

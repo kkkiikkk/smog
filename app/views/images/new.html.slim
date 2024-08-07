@@ -1,8 +1,18 @@
-= form_for @image, html: { class: 'image-form' } do |f|
-  .form-group
-    = f.file_field :image, class: 'form-control'
+.container.text-center
+  .row.justify-content-center
+    .col-md-6
+      = form_with model: @image, url: images_path, local: true, html: { multipart: true } do |f|
+        .image-preview.hidden
+          / img#image-preview src="#" alt="Image Preview"
+        .form-group.upload-container
+          input#file-upload type="file" name="image[image]" class="form-control-file"
+          label for="file-upload"
+            span.icon
+              i class="fas fa-arrow-up"
+            span.text Select a file or drag it here
+          .upload-info
+            | We recommend using high quality .jpg files (less than 20MB in size)
+        .form-group
+          = f.submit 'Upload', class: 'signup-button'
 
-  .form-group
-    = f.submit 'Create Image', class: 'btn btn-primary'
-
-= link_to 'Back', images_path, class: 'btn btn-secondary'
+  
