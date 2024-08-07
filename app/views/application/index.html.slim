@@ -1,15 +1,21 @@
-.container-welcome 
-  h1.title WELCOME SMOG
-  p.text Smog is a new platform to store and share images with everyone. You can comment or like some pictures, but for that you have to sign up.
+div
+  .container-welcome
+    h1.title WELCOME SMOG
+    p.text Smog is a new platform to store and share images with everyone. You can comment or like some pictures, but for that you have to sign up.
 
-#carouselExampleInterval.carousel.slide data={bs_ride: "carousel"}
-  .carousel-inner
-    - @images.each_with_index do |image, index|
-      .carousel-item class={index == 0 ? 'active' : ''} data-bs-interval={index == 0 ? "10000" : "2000"}
-        = image_tag image.image_url, class: "d-block w-100", alt: "Carousel image #{index + 1}"
-  button.carousel-control-prev type={"button"} data={bs_target: "#carouselExampleInterval", bs_slide: "prev"}
-    span.carousel-control-prev-icon aria-hidden={"true"}
-    span.visually-hidden Previous
-  button.carousel-control-next type={"button"}, data={bs_target: "#carouselExampleInterval", bs_slide: "next"}
-    span.carousel-control-next-icon aria-hidden={"true"}
-    span.visually-hidden Next
+  div.carousel-container
+  
+    #carouselExample.carousel.slide
+      .carousel-inner
+        - @images.each_with_index do |image, index|
+          .carousel-item class=(index == 0 ? 'active' : '')
+            = image_tag image.image.url, class: "d-block w-100 h-100", alt: "Carousel image #{index + 1}"
+
+      .carousel-controls
+        button.carousel-control-prev type="button" data-bs-target="#carouselExample" data-bs-slide="prev"
+          span.carousel-control-prev-icon aria-hidden="true"
+          span.visually-hidden Previous
+
+        button.carousel-control-next type="button" data-bs-target="#carouselExample" data-bs-slide="next"
+          span.carousel-control-next-icon aria-hidden="true"
+          span.visually-hidden Next
