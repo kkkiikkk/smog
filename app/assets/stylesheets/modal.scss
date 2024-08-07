@@ -1,0 +1,118 @@
+// Modal styles
+.modal.fade {
+  .modal-dialog {
+    max-width: 90%;
+    width: auto;
+    margin: 1.75rem auto;
+
+    .modal-content {
+      border-radius: 10px;
+      overflow: hidden;
+      
+      .modal-header {
+        background-color: #081158;
+        color: white;
+        border-bottom: none;
+        h5.modal-title {
+          font-family: 'Red Hat Display', sans-serif;
+        }
+        button.close {
+          color: white;
+          opacity: 1;
+          &:hover {
+            color: #ccc;
+          }
+          span {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+
+        .modal-content-wrapper {
+          display: flex;
+          flex: 1;
+          justify-content: space-between;
+          flex-direction: row;
+
+          .image-container {
+            flex: 1;
+            max-width: 50%;
+            text-align: center;
+            margin-bottom: 20px;
+            img.fixed-dimensions {
+              width: 400px; /* Set a fixed width */
+              height: 300px; /* Set a fixed height */
+              border-radius: 10px;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+          }
+
+          .comments-container {
+            flex: 1;
+            max-width: 50%;
+            margin-left: 20px;
+
+            h5 {
+              font-family: 'Red Hat Display', sans-serif;
+              margin-bottom: 15px;
+            }
+
+            .comments-list {
+              margin-bottom: 20px;
+              p {
+                background: #f8f9fa;
+                padding: 10px;
+                border-radius: 5px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                margin-bottom: 10px;
+              }
+            }
+
+            .form-group {
+              margin-bottom: 15px;
+
+              label {
+                display: block;
+                margin-bottom: 5px;
+              }
+
+              textarea.form-control {
+                width: 100%;
+                border: 1px solid #ced4da;
+                border-radius: 5px;
+                padding: 10px;
+                transition: border-color 0.3s;
+                &:focus {
+                  border-color: #081158;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .modal-footer {
+        border-top: none;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+
+        .btn.btn-secondary {
+          background-color: #081158;
+          color: white;
+          border: none;
+          &:hover {
+            background-color: #333a6d;
+          }
+        }
+      }
+    }
+  }
+}

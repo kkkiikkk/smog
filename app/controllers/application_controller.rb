@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
   def index
-    # render ""
+    @images = Image.take(5)
   end
 end

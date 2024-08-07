@@ -1,0 +1,31 @@
+.container.text-center {
+  padding-top: 30px;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col-md-4 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .pinterest-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 19px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .pinterest-image {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

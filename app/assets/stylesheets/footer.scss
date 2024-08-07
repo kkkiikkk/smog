@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&family=Sato:wght@400;700&display=swap');
+
+$font-red-hat: 'Red Hat Display', sans-serif;
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+  background-color: #081158;
+  color: white;
+  // box-shadow: 0 50vh 0 50vh #081158;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: $font-red-hat;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

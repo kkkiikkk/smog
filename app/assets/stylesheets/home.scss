@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&family=Sato:wght@400;700&display=swap');
+$font-sato: 'Sato', sans-serif;
+$font-red-hat: 'Red Hat Display', sans-serif;
+:root {
+  --bs-blue: #081158;
+};
+
+.container-welcome {
+  background-color: #eef0f4;
+  padding: 1rem;
+
+  .title {
+    color: #081158;
+    margin: 0 auto;
+    font-family: $font-sato;
+    text-align: center;
+    font-weight: 800;
+    padding-top: 7rem;
+  }
+
+  .text {
+    color: #081158;
+    font-family: $font-red-hat;
+    text-align: center;
+    padding-top: 2rem;
+    width: 300px;
+    padding-bottom: 5rem;
+
+    margin: 0 auto;
+  }
+}

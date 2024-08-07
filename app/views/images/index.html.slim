@@ -1,0 +1,21 @@
+.container.text-center
+  .row
+    - @images.each_with_index do |image, index|
+      - if image.image.url.present?
+        .col-md-4
+          .pinterest-item
+            a href="#" data-toggle="modal" data-target="#imageModal" data-image-url=image.image.url data-index=index
+              = image_tag image.image.url, alt: "Image", class: "img-fluid pinterest-image"
+
+.modal.fade id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+      .modal-body
+        .modal-content-wrapper
+          .image-container
+            = image_tag "", id: "modalImage", class: "fixed-dimensions"
+          .comments-container
+            h5 Comments
+      .modal-footer
+        button.btn.btn-secondary type="button" close="modal" data-dismiss="modal" Close

@@ -1,6 +1,4 @@
-import "@hotwired/turbo-rails"
 import "popper"
 import "bootstrap"
-import "stripe"
-
-import "controllers"
+import "./modal.js"
+import "./upload.js"

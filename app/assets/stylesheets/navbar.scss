@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&family=Sato:wght@400;700&display=swap');
+
+$font-red-hat: 'Red Hat Display', sans-serif;
+:root {
+  --bs-blue: #081158;
+};
+
+$navbar-background: #cfddee;
+$navbar-link-color: var(--bs-blue);
+$navbar-link-hover-color: var(--bs-blue);
+$navbar-brand-color: var(--bs-blue);
+$navbar-toggler-icon-color: var(--bs-blue);
+$navbar-text-color: var(--bs-blue);
+
+nav.navbar {
+  font-family: $font-red-hat;
+  background-color: $navbar-background !important;
+
+  .navbar-brand {
+    color: $navbar-brand-color !important;
+    font-weight: 700;
+
+    &:hover {
+      color: $navbar-link-hover-color !important;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-link-color !important;
+
+      &:hover {
+        color: $navbar-link-hover-color !important;
+      }
+
+      &.active {
+        font-weight: bold;
+        border-bottom: 2px solid $navbar-link-hover-color !important;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $navbar-toggler-icon-color !important;
+
+    .navbar-toggler-icon {
+      background-color: $navbar-toggler-icon-color !important;
+    }
+  }
+
+  .navbar-text {
+    color: $navbar-text-color !important;
+  }
+  
+  .btn-signup {
+    display: block;
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-family: $font-red-hat;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--bs-blue);
+      transform: scale(0.96);
+      transition: transform 0.3s ease;
+    }
+  }
+}
