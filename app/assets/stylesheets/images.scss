@@ -18,7 +18,7 @@
     overflow: hidden;
     border-radius: 19px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-
+    cursor: pointer;
     &:hover {
       transform: scale(1.05);
     }

@@ -18,6 +18,11 @@ html
               = link_to "Home", root_path, class: "nav-link active", aria: { current: "page" }
             li.nav-item
               = link_to "Explore", images_path, class: "nav-link"
+            - if user_signed_in?
+              li.nav-item
+                = link_to "Add pin", new_image_path, class: "nav-link"
+            / li.nav-item
+              / = link_to "Add pin", new_image_path, class: "nav-link"
             li.nav-item
               = link_to "Categories", root_path, class: "nav-link"
             li.nav-item
