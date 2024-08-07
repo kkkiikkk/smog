@@ -40,7 +40,6 @@ body {
   --bs-dark: #212529;
 }
 
-/* Define Sass variables for colors */
 $primary: #0d6efd;
 $success: #198754;
 $warning: #ffc107;
@@ -50,7 +49,6 @@ $light: #f8f9fa;
 $dark: #212529;
 $gray-300: #dee2e6;
 
-/* Link styles */
 .form-link {
   color: var(--bs-blue);
   text-decoration: none;
@@ -65,7 +63,6 @@ $gray-300: #dee2e6;
   }
 }
 
-/* Error explanation styles */
 #error_explanation {
   font-family: $font-red-hat;
   font-size: 14px;
@@ -89,7 +86,6 @@ $gray-300: #dee2e6;
   }
 }
 
-/* Button styles for OmniAuth sign-in buttons */
 .btn-signin {
   background-color: var(--bs-blue);
   color: var(--bs-white);
@@ -108,7 +104,6 @@ $gray-300: #dee2e6;
   }
 }
 
-/* Form styles */
 .auth-form {
   max-width: 400px;
   margin: 0 auto;
@@ -156,10 +151,8 @@ $gray-300: #dee2e6;
       width: 100%;
       padding: 0.5rem;
       border-radius: 6px;
-      // border: 1px solid $gray-300;
       background-color: rgba(32, 52, 146, 0.1);
       color: var(--bs-blue);
-      // box-shadow: inset 0 1px 2px rgba(var(--bs-gray-600), 0.075);
 
       &::placeholder {
         color: var(--bs-blue);
@@ -167,7 +160,6 @@ $gray-300: #dee2e6;
       }
 
       &:focus {
-        // border-color: $primary;
         box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
       }
     }
