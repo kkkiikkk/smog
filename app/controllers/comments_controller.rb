@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_image, only: %i[create index]
+  before_action :set_image, only: %i[create]
 
   def create
     @comment = @image.comments.build(comment_params)
