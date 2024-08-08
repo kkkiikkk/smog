@@ -1,4 +1,12 @@
-// Modal styles
+.modal {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.modal.show {
+  display: block !important;
+  opacity: 1 !important
+}
 .modal.fade {
   .modal-dialog {
     max-width: 90%;
@@ -7,7 +15,7 @@
 
     .modal-content {
       border-radius: 10px;
-      overflow: hidden;
+      // overflow: hidden;
       
       .modal-header {
         background-color: #081158;
@@ -45,8 +53,8 @@
             text-align: center;
             margin-bottom: 20px;
             img.fixed-dimensions {
-              width: 400px; /* Set a fixed width */
-              height: 300px; /* Set a fixed height */
+              width: 400px;
+              height: 300px;
               border-radius: 10px;
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
