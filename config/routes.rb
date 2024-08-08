@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   # get '/images/:id', to: 'images#show'
   # authenticated :users do
   resources :images do
-    resources :comments, only: [:create, :index]
+    resources :comments, only: [:create]
+    resources :likes, only: [:create]
   end
 
   # end

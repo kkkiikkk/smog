@@ -83,19 +83,19 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
-    domain: 'google.com',
-    user_name: 'ruddnovskiy@gmail.com',
-    password: 'uunq zlkc uzug bjkg ',
+    domain: ENV['SMTP_PROVIDER_DOMAIN'],
+    user_name: ENV['SMTP_EMAIL_PROVIDER'],
+    password: ENV['SMTP_PASSWORD_PROVIDER'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
 
   # Exception Notification Configurations
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-                                          email: {
-                                            email_prefix: '[Hospital Mangment] ',
-                                            sender_address: %("Production - Error on Production Server" <adminhospital@gmail.com>),
-                                            exception_recipients: %w[admin@gmail.com, ashwinborkar1997@gmail.com,
-                                                                     superadmin@gmail.com]
-                                          }
+  # Rails.application.config.middleware.use ExceptionNotification::Rack,
+  #                                         email: {
+  #                                           email_prefix: '[Hospital Mangment] ',
+  #                                           sender_address: %("Production - Error on Production Server" <adminhospital@gmail.com>),
+  #                                           exception_recipients: %w[admin@gmail.com, ashwinborkar1997@gmail.com,
+  #                                                                    superadmin@gmail.com]
+  #                                         }
 end

@@ -5,8 +5,9 @@
 
 .modal.show {
   display: block !important;
-  opacity: 1 !important
+  opacity: 1 !important;
 }
+
 .modal.fade {
   .modal-dialog {
     max-width: 90%;
@@ -15,21 +16,24 @@
 
     .modal-content {
       border-radius: 10px;
-      // overflow: hidden;
-      
+
       .modal-header {
         background-color: #081158;
         color: white;
         border-bottom: none;
+
         h5.modal-title {
           font-family: 'Red Hat Display', sans-serif;
         }
+
         button.close {
           color: white;
           opacity: 1;
+
           &:hover {
             color: #ccc;
           }
+
           span {
             font-size: 1.5rem;
           }
@@ -43,27 +47,51 @@
 
         .modal-content-wrapper {
           display: flex;
-          flex: 1;
+          width: 100%;
           justify-content: space-between;
           flex-direction: row;
 
           .image-container {
             flex: 1;
-            max-width: 50%;
+            max-width: 48%; 
             text-align: center;
+            margin-right: 2%;
             margin-bottom: 20px;
+
             img.fixed-dimensions {
-              width: 400px;
-              height: 300px;
+              width: 100%;
+              height: auto; 
+              max-width: 400px;
+              max-height: 300px;
               border-radius: 10px;
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .like-section {
+              margin-top: 15px;
+              text-align: center;
+
+              .like-image {
+                cursor: pointer;
+                width: 20px !important;
+                height: 20px !important;
+                object-fit: contain;
+                display: inline-block;
+                margin: 5px 0;
+              }
+
+              p {
+                margin-top: 5px;
+                font-family: 'Red Hat Display', sans-serif;
+                font-size: 14px;
+              }
             }
           }
 
           .comments-container {
             flex: 1;
-            max-width: 50%;
-            margin-left: 20px;
+            max-width: 48%;
+            margin-left: 2%;
 
             h5 {
               font-family: 'Red Hat Display', sans-serif;
@@ -72,6 +100,7 @@
 
             .comments-list {
               margin-bottom: 20px;
+
               p {
                 background: #f8f9fa;
                 padding: 10px;
@@ -95,6 +124,7 @@
                 border-radius: 5px;
                 padding: 10px;
                 transition: border-color 0.3s;
+
                 &:focus {
                   border-color: #081158;
                 }
@@ -116,6 +146,7 @@
           background-color: #081158;
           color: white;
           border: none;
+
           &:hover {
             background-color: #333a6d;
           }

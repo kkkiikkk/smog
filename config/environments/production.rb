@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -53,16 +53,16 @@ Rails.application.configure do
 
   # Log to STDOUT by default
   config.logger = ActiveSupport::Logger.new(STDOUT)
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-    .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+                                       .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
+                                       .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # "info" includes generic and useful information about system operation, but avoids logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII). If you
   # want to log everything, set the level to "debug".
-  config.log_level = ENV.fetch("RAILS_LOG_LEVEL", "info")
+  config.log_level = ENV.fetch('RAILS_LOG_LEVEL', 'info')
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
@@ -101,19 +101,19 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: '587',
-    domain: 'google.com',
-    user_name: 'ruddnovskiy@gmail.com',
-    password: 'uunq zlkc uzug bjkg ',
+    domain: ENV['SMTP_PROVIDER_DOMAIN'],
+    user_name: ENV['SMTP_EMAIL_PROVIDER'],
+    password: ENV['SMTP_PASSWORD_PROVIDER'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
 
   # Exception Notification Configurations
-  Rails.application.config.middleware.use ExceptionNotification::Rack,
-                                          email: {
-                                            email_prefix: '[Hospital Mangment] ',
-                                            sender_address: %("Production - Error on Production Server" <adminhospital@gmail.com>),
-                                            exception_recipients: %w[admin@gmail.com, ashwinborkar1997@gmail.com,
-                                                                     superadmin@gmail.com]
-                                          }
+  # Rails.application.config.middleware.use ExceptionNotification::Rack,
+  #                                         email: {
+  #                                           email_prefix: '[Hospital Mangment] ',
+  #                                           sender_address: %("Production - Error on Production Server" <adminhospital@gmail.com>),
+  #                                           exception_recipients: %w[admin@gmail.com, ashwinborkar1997@gmail.com,
+  #                                                                    superadmin@gmail.com]
+  #                                         }
 end

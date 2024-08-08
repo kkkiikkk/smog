@@ -6,6 +6,11 @@
         .modal-content-wrapper
           .image-container
             = image_tag image.image.url, id: "modalImage", class: "fixed-dimensions"
+            .like-section
+              p
+              | Likes: #{image.likes.size}
+              = button_to image_likes_path(image), method: :post, class: "btn btn-link" do
+                = image_tag "like.svg", class: "like-image"
           .comments-container
             h5 Comments
             .comment-form
@@ -15,8 +20,8 @@
                   = f.text_area :caption, class: "form-control", rows: 3
                 .form-group
                   = f.submit 'Add Comment', class: "btn btn-primary"
-            = render partial: 'comments/comments_list', locals: { comments: image.comments }
-              
+            .comments-list
+              = render partial: 'comments/comments_list', locals: { comments: image.comments }
       .modal-footer
         = link_to 'Close', images_path, class: "btn btn-secondary"
 .modal-backdrop.fade.show
