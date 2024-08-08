@@ -3,19 +3,19 @@ class ImagesController < ApplicationController
     @images = Image.all
   end
 
-  def show
-    @image = Image.find params[:id]
-  end
-
   def new
     @image = Image.new
+  end
+
+  def show
+    @image = Image.find params[:id]
   end
 
   def create
     @image = Image.new post_params
 
     if @image.save
-      redirect_to @image
+      redirect_to images_path
     else
       render 'new'
     end

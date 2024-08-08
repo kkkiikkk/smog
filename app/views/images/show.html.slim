@@ -1,5 +1,2 @@
-p
-  = image_tag @image.image.url, alt: "Image", class: "img-fluid"
-
-p
-  = link_to 'Back to List', images_path, class: 'btn btn-secondary'
+div
+  = render partial: 'images/modal', locals: { image: @image }

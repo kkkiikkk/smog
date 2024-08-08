@@ -38,6 +38,8 @@ gem 'dartsass-sprockets', '~> 3.0'
 
 gem 'carrierwave', '~> 3.0'
 
+gem 'exception_notification'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

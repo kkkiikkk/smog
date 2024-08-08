@@ -1,0 +1,22 @@
+.modal.fade.show#imageModal tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-modal="true" style="display: block; opacity: 1;"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header
+      .modal-body
+        .modal-content-wrapper
+          .image-container
+            = image_tag image.image.url, id: "modalImage", class: "fixed-dimensions"
+          .comments-container
+            h5 Comments
+            .comment-form
+              = form_with model: [image, Comment.new], local: true, html: { id: 'commentForm', data: { image_id: image.id } } do |f|
+                .form-group
+                  = f.label :caption
+                  = f.text_area :caption, class: "form-control", rows: 3
+                .form-group
+                  = f.submit 'Add Comment', class: "btn btn-primary"
+            = render partial: 'comments/comments_list', locals: { comments: image.comments }
+              
+      .modal-footer
+        = link_to 'Close', images_path, class: "btn btn-secondary"
+.modal-backdrop.fade.show
