@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :set_category, only: %i[show index]
+  before_action :set_category, only: %i[show]
 
   def index
     @images = Image.includes(:category).where.not(category_id: nil)
