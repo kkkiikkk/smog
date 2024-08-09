@@ -2,6 +2,7 @@ class Image < ApplicationRecord
   mount_uploader :image, MediaUploader
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  belongs_to :category
 
   validates_processing_of :image
   validates :image, presence: true
