@@ -1,1 +1,5 @@
-  = render partial: 'images/list', locals: { images: @images }
+.kaminari-container
+  .content-wrapper
+    = render partial: 'images/list', locals: { images: @images }
+  .pagination-footer
+    = paginate @images

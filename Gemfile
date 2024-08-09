@@ -42,6 +42,8 @@ gem 'exception_notification'
 
 gem 'friendly_id', '~> 5.1'
 
+gem 'kaminari'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

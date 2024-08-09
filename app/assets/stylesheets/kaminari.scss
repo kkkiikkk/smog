@@ -1,0 +1,37 @@
+
+.kaminari .pagination {
+  .page-item {
+    &.active > .page-link {
+      background-color: #081158 !important;
+      border-color: #081158 !important;
+      color: white !important;
+    }
+    
+    .page-link {
+      color: #081158 !important;
+      background-color: whitesmoke !important;
+      border-color: #081158 !important;
+
+      &:hover {
+        color: white !important;
+        background-color: #081158 !important;
+        border-color: #081158 !important;
+      }
+    }
+  }
+}
+.kaminari-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.content-wrapper {
+  flex: 1;
+}
+
+.pagination-footer {
+  text-align: center;
+  margin-top: auto;
+}
