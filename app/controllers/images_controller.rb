@@ -2,7 +2,7 @@ class ImagesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @images = Image.includes(:category).where.not(category_id: nil).page(params[:page]).per(10)
+    @images = Image.includes(:category).where.not(category_id: nil).page(params[:page]).per(20)
     puts @images
   end
 
