@@ -1,4 +1,3 @@
 h1 
   = @category.name
-  = @category.images.size
   = render partial: 'images/list', locals: { images: @category.images, category_slug: @category.slug }

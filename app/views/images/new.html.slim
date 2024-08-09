@@ -1,7 +1,10 @@
 .container.text-center
   .row.justify-content-center
     .col-md-6
-      = form_with model: @image, url: images_path, local: true, html: { multipart: true } do |f|
+      = form_with model: @image, local: true, html: { multipart: true } do |f|
+        .form-group
+          = f.label :category_name, "Category Name"
+          = f.text_field :category_name, class: "form-control"
         .image-preview.hidden
           / img#image-preview src="#" alt="Image Preview"
         .form-group.upload-container
@@ -14,5 +17,3 @@
             | We recommend using high quality .jpg files (less than 20MB in size)
         .form-group
           = f.submit 'Upload', class: 'signup-button', disabled: true
-
-  

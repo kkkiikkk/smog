@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :images, only: [:new]
+  resources :images, only: [:new, :create]
 
   root to: 'application#index'
 end

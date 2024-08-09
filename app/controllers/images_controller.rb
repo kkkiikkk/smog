@@ -14,7 +14,8 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = Image.new(post_params)
+    @category = Category.find_or_create_by(name: category_name_param)
+    @image = @category.images.new(image_params)
 
     if @image.save
       redirect_to category_image_path(@category, @image)
@@ -25,8 +26,12 @@ class ImagesController < ApplicationController
 
   private
 
-  def post_params
+  def image_params
     params.require(:image).permit(:image)
+  end
+
+  def category_name_param
+    params.require(:image).permit(:category_name)[:category_name]
   end
 
   def set_category
