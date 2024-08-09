@@ -1,0 +1,7 @@
+.kaminari-container
+  .content-wrapper
+    h1 
+      = @category.name
+      = render partial: 'images/list', locals: { images: @images, category_slug: @category.slug }
+  .pagination-footer
+    = paginate @images

@@ -7,6 +7,9 @@
 @import "footer";
 @import "images";
 @import "upload";
+// @import "bootstrap/scss/bootstrap";
+// @import "kaminari/scss/kaminari";
+@import "kaminari";
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&family=Sato:wght@400;700&display=swap');
 
 $font-sato: 'Sato', sans-serif;
@@ -20,4 +23,9 @@ body {
 input { 
   font-family: $font-red-hat;
   font-weight: 400;
+}
+
+.pagination {
+  --bs-pagination-active-bg: #081158 !important;
+
 }
