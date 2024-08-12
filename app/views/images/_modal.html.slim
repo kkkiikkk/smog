@@ -13,7 +13,6 @@
                 = image_tag "like.svg", class: "like-image"
           .comments-container
             h5 Comments
-            = recaptcha_tags
             /   - if @show_checkbox_recaptcha
             /       = recaptcha_tags(site_key: ENV['SITE_KEY_RECAPTCHA'])
             /   - else  
@@ -25,13 +24,13 @@
             /   = recaptcha_tags(site_key: "6LftASMqAAAAABI8fdhTkAV7uzxQHurLWHnT5ALW")
             / - else
             / = recaptcha_v3(action: 'add_comment', site_key: "6LftASMqAAAAABI8fdhTkAV7uzxQHurLWHnT5ALW")
-            - if @show_checkbox_recaptcha
-              = recaptcha_tags(site_key: "6Lc9DCMqAAAAACjwoZKeJA6OfIkohwD6FbkFgxpq")
-            - else
-              = recaptcha_v3(action: 'add_comment')
+            / - if @show_checkbox_recaptcha
+            /   = recaptcha_tags(site_key: "6Lc9DCMqAAAAACjwoZKeJA6OfIkohwD6FbkFgxpq")
 
             .comment-form
               = form_with model: [category, image, Comment.new], local: true, html: { id: 'commentForm', data: { image_id: image.id } } do |f|
+                .form-group
+                  = recaptcha_tags
                 .form-group
                   = f.label :caption
                   = f.text_area :caption, class: "form-control", rows: 3

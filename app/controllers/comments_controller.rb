@@ -1,33 +1,19 @@
 class CommentsController < ApplicationController
-  before_action :set_image, :set_category, only: %i[create]
+  before_action :set_image, :set_category, only: [:create]
 
   def create
     @comment = @image.comments.build(comment_params)
     @comment.user = current_user
 
-    success = verify_recaptcha(action: 'add_comment', minimum_score: 0)
-    checkbox_success = verify_recaptcha(model: @comment, site_key: '6Lc9DCMqAAAAACjwoZKeJA6OfIkohwD6FbkFgxpq') unless success
-    Rails.logger.warn(checkbox_success)
-    Rails.logger.warn(success)
-    if checkbox_success || success
-      @comment.save
-        redirect_to category_image_path(@category, @image)
-      # else
-        # render json: { error: 'Error creating comment.' }, status: :unprocessable_entity
-      # end 
-    else
-        if !success
-          @show_checkbox_recaptcha = true
-          Rails.logger.warn("Post not saved because of a recaptcha score of #{recaptcha_reply}")
-       end
-        # render :index, status: :unprocessable_entity
-        render json: { error: 'Error creating comment.' }, status: :unprocessable_entity
+    recaptcha_success = verify_recaptcha(model: @comment)
 
+    if recaptcha_success && @comment.save
+      redirect_to category_image_path(@category, @image), notice: 'Comment successfully created.'
+    else
+      @show_checkbox_recaptcha = true unless recaptcha_success
+      render json: { error: 'Error creating comment or reCAPTCHA failed.' }, status: :unprocessable_entity
     end
-      
-    end
-  # end
-  # end
+  end
 
   private
 
