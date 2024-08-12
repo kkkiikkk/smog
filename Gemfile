@@ -44,6 +44,8 @@ gem 'friendly_id', '~> 5.1'
 
 gem 'kaminari'
 
+gem 'recaptcha'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

@@ -3,7 +3,6 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.includes(:category).where.not(category_id: nil).page(params[:page]).per(20)
-    puts @images
   end
 
   def new

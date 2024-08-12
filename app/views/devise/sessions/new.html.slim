@@ -5,6 +5,9 @@
   .field
     br/
     = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"
+  .field
+    br/
+    = recaptcha_tags
   - if devise_mapping.rememberable?
     .field.checkbox-field
       = f.label :remember_me, for: "remember_me"

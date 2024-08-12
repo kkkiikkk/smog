@@ -9,7 +9,7 @@ div
       .carousel-inner
         - @images.each_with_index do |image, index|
           .carousel-item class=(index == 0 ? 'active' : '')
-            = image_tag image.image.url, class: "d-block w-100 h-100", alt: "Carousel image #{index + 1}"
+            = image_tag image.image.url(:thumb), class: "d-block w-100 h-100", alt: "Carousel image #{index + 1}"
 
       .carousel-controls
         button.carousel-control-prev type="button" data-bs-target="#carouselExample" data-bs-slide="prev"

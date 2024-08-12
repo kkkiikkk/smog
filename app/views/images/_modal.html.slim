@@ -5,7 +5,7 @@
       .modal-body
         .modal-content-wrapper
           .image-container
-            = image_tag image.image.url, id: "modalImage", class: "fixed-dimensions"
+            = image_tag image.image.url(:thumb), id: "modalImage", class: "fixed-dimensions"
             .like-section
               p
                 | Likes: #{image.likes.size}
@@ -15,6 +15,8 @@
             h5 Comments
             .comment-form
               = form_with model: [category, image, Comment.new], local: true, html: { id: 'commentForm', data: { image_id: image.id } } do |f|
+                .form-group
+                  = recaptcha_tags
                 .form-group
                   = f.label :caption
                   = f.text_area :caption, class: "form-control", rows: 3
