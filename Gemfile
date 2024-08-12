@@ -46,6 +46,10 @@ gem 'kaminari'
 
 gem 'recaptcha'
 
+gem 'resque', '~> 2.6'
+
+gem 'resque-scheduler', '~> 4.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
