@@ -5,7 +5,7 @@
       .modal-body
         .modal-content-wrapper
           .image-container
-            = image_tag image.image.url, id: "modalImage", class: "fixed-dimensions"
+            = image_tag image.image.url(:thumb), id: "modalImage", class: "fixed-dimensions"
             .like-section
               p
                 | Likes: #{image.likes.size}
@@ -13,20 +13,6 @@
                 = image_tag "like.svg", class: "like-image"
           .comments-container
             h5 Comments
-            /   - if @show_checkbox_recaptcha
-            /       = recaptcha_tags(site_key: ENV['SITE_KEY_RECAPTCHA'])
-            /   - else  
-            /       = recaptcha_v3(action: 'add_comment')
-            / - if @show_checkbox_recaptcha
-                = recaptcha_tags(site_key: ENV['SITE_KEY_RECAPTCHA'])
-            / - else
-            / - if @show_checkbox_recaptcha
-            /   = recaptcha_tags(site_key: "6LftASMqAAAAABI8fdhTkAV7uzxQHurLWHnT5ALW")
-            / - else
-            / = recaptcha_v3(action: 'add_comment', site_key: "6LftASMqAAAAABI8fdhTkAV7uzxQHurLWHnT5ALW")
-            / - if @show_checkbox_recaptcha
-            /   = recaptcha_tags(site_key: "6Lc9DCMqAAAAACjwoZKeJA6OfIkohwD6FbkFgxpq")
-
             .comment-form
               = form_with model: [category, image, Comment.new], local: true, html: { id: 'commentForm', data: { image_id: image.id } } do |f|
                 .form-group
