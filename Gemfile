@@ -52,6 +52,10 @@ gem 'resque_spec'
 
 gem 'resque-scheduler', '~> 4.0'
 
+gem 'omniauth'
+
+gem 'omniauth-google-oauth2'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
