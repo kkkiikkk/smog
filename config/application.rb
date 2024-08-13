@@ -1,6 +1,6 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,12 +14,14 @@ module Smog
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w[assets tasks])
 
     config.generators do |g|
       g.template_engine :slim
     end
     config.active_job.queue_adapter = :resque
+    config.action_dispatch.cookies_same_site_protection = :none
+    config.action_controller.default_protect_from_forgery = false if ENV['RAILS_ENV'] == 'development'
 
     # Configuration for the application, engines, and railties goes here.
     #
