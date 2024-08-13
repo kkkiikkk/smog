@@ -1,0 +1,7 @@
+p Here are your subscription updates for today:
+ul
+  - @subscriptions.each do |subscription|
+      li
+        = subscription.category.name
+        div
+          = image_tag @image.image.url

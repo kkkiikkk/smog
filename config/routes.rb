@@ -14,5 +14,7 @@ Rails.application.routes.draw do
 
   resources :images, only: %i[new create index]
 
+  mount Resque::Server, at: '/resque'
+
   root to: 'application#index'
 end

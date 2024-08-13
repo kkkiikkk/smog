@@ -1,5 +1,5 @@
-subscriptions_job: 
+subscriptions_job:
   cron: '*/1 * * * *'
-  rails_env: development
-  class: SubscriptionJob
-  descriptions: A job to hadnle user's category subscriptions
+  class: 'SubscriptionsJob'
+  queue: 'default'
+  description: 'A job to handle users category subscriptions'
