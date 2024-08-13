@@ -19,6 +19,7 @@ module Smog
     config.generators do |g|
       g.template_engine :slim
     end
+    config.active_job.queue_adapter = :resque
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -1,6 +1,11 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.left_joins(:subscriptions)
+                          .select('categories.*, subscriptions.id AS subscription_id')
+                          .where('subscriptions.user_id = ? OR subscriptions.id IS NULL', current_user.id)
+                          .distinct
+
+    p @categories
   end
 
   def show

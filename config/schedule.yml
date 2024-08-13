@@ -1,0 +1,5 @@
+subscriptions_job:
+  cron: '*/1 * * * *'
+  class: 'SubscriptionsJob'
+  queue: 'default'
+  description: 'A job to handle users category subscriptions'

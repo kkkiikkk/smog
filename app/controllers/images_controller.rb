@@ -16,7 +16,7 @@ class ImagesController < ApplicationController
   def create
     @category = Category.find_or_create_by(name: category_name_param)
     @image = @category.images.new(image_params)
-
+    SubscriptionsJob.perform_now(@image, @category)
     if @image.save
       redirect_to category_image_path(@category, @image)
     else

@@ -1,3 +1,10 @@
 - @categories.each do |category|
     h1 style="color:#081158;"
       = category[:name]
+      - if user_signed_in?
+        - if category.subscriptions.empty?
+            = button_to "Subscribe", category_subscriptions_path(category), data: { turbo_method: :post }, method: :post
+        - else
+            = button_to "Unsubscribe", category_subscription_path(category, category.subscriptions[0]), data: { turbo_method: :delete }, method: :delete
+      - else 
+        = button_to "Subscribe", new_user_session_path, data: { turbo: false }, method: :get
