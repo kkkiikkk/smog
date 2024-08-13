@@ -8,15 +8,26 @@ class LikesController < ApplicationController
       @like = @image.likes.build
       @like.user = current_user
       if @like.save
+        time = Time.now
+        adjusted_hours = time.hour + 24
+        formatted_time = time.strftime('%d.%m.%Y ') + "#{adjusted_hours}:#{time.strftime('%M')}"
+        Action.create(email: current_user.email, url: "/categories/#{@category.slug}/#{@image.id}/likes",
+                      type: 'delete like',
+                      timestamp: formatted_time)
         redirect_to category_image_path(@category, @image)
       else
         render json: { error: 'Error creating like.' }, status: :unprocessable_entity
       end
     else
       expecting_like.delete
+      time = Time.now
+      adjusted_hours = time.hour + 24
+      formatted_time = time.strftime('%d.%m.%Y ') + "#{adjusted_hours}:#{time.strftime('%M')}"
+      Action.create(email: current_user.email, url: "/categories/#{@category.slug}/#{@image.id}/likes",
+                    type: 'delete like',
+                    timestamp: formatted_time)
       redirect_to category_image_path(@category, @image)
     end
-    
   end
 
   private

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  email: MyString
+  url: MyString
+  timestamp: 2024-08-13
+
+two:
+  type: 
+  email: MyString
+  url: MyString
+  timestamp: 2024-08-13
