@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories do
+    resources :subscriptions, only: %i[create destroy]
     resources :images, only: [:show], path: '' do
       resources :comments, only: [:create]
       resources :likes, only: [:create]

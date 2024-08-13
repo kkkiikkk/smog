@@ -2,11 +2,18 @@ class SubscriptionsController < ApplicationController
   before_action :set_category
 
   def create
-    @subscription = @category.subscriptions.new(user_id: current_user.id)
-
-    redirect_to categories_path
+    @subscription = @category.subscriptions.new(user: current_user)
+    if @subscription.save
+      redirect_to categories_path
+    else
+      render json: { error: 'Error subscribing' }, status: :unprocessable_entity
+    end
   end
 
+  def destroy
+    Subscription.delete_by(id: params[:id])
+    redirect_to categories_path
+  end
 
   private
 
