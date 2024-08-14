@@ -14,3 +14,4 @@ class Comment < ApplicationRecord
     %w[caption created_at id id_value image_id updated_at user_id]
   end
 end
+# scope :chronological, -> { order(created_at: :asc, id: :asc) }
