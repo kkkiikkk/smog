@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 class ImagesController < ApplicationController
   before_action :set_category, only: %i[show]
+  after_action :new_action, only: %i[index create show]
 
   def index
     @images = Image.includes(:category).where.not(category_id: nil).page(params[:page]).per(20)
+    @action_description = 'go to images by category'
   end
 
   def new
@@ -11,6 +15,7 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
+    @action_description = 'go to specefic image'
   end
 
   def create
@@ -18,6 +23,7 @@ class ImagesController < ApplicationController
     @image = @category.images.new(image_params)
     SubscriptionsJob.perform_now(@image, @category)
     if @image.save
+      @action_description = 'create new image'
       redirect_to category_image_path(@category, @image)
     else
       render 'new'
@@ -36,5 +42,13 @@ class ImagesController < ApplicationController
 
   def set_category
     @category = Category.friendly.find(params[:category_id])
+  end
+
+  def new_action
+    return if @action_description.nil?
+
+    action_creator = ActionCreator.new(@action_description, request.url, current_user.email)
+    action_creator.create
+    @action_description = nil
   end
 end

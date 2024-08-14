@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  before_action :set_image, :set_category, only: [:create]
+  before_action :set_image, :set_request_url, :set_category, only: [:create]
+  after_action  :new_action, only: %i[create]
 
   def create
     @comment = @image.comments.build(comment_params)
     @comment.user = current_user
-
+    @action_description = 'add new comment'
     recaptcha_success = verify_recaptcha(model: @comment)
 
     if recaptcha_success && @comment.save
@@ -27,5 +30,17 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:caption)
+  end
+
+  def set_request_url
+    @request_url = request.url
+  end
+
+  def new_action
+    return if @action_description.nil?
+
+    action_creator = ActionCreator.new(@action_description, @request_url, current_user.email)
+    action_creator.create
+    @action_description = nil
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MediaUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
@@ -8,7 +10,7 @@ class MediaUploader < CarrierWave::Uploader::Base
   end
 
   def content_type_allowlist
-    [/image\//]
+    [%r{image/}]
   end
 
   version :thumbnail do
@@ -20,6 +22,6 @@ class MediaUploader < CarrierWave::Uploader::Base
   end
 
   def extension_allowlist
-    %w(jpg jpeg png)
+    %w[jpg jpeg png]
   end
 end
