@@ -56,6 +56,8 @@ gem 'omniauth'
 
 gem 'omniauth-google-oauth2'
 
+gem 'activeadmin'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
