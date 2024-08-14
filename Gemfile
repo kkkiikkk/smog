@@ -58,6 +58,8 @@ gem 'omniauth-google-oauth2'
 
 gem 'activeadmin'
 
+gem 'nokogiri', '~> 1.16', '>= 1.16.7'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

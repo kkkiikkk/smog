@@ -450,6 +450,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kaminari
+  nokogiri (~> 1.16, >= 1.16.7)
   omniauth
   omniauth-google-oauth2
   pg (~> 1.1)
