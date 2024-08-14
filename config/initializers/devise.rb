@@ -310,9 +310,10 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  config.navigational_formats = ['/', :html, :turbo_stream]
   # puts Rails.application.credentials.google.google_oauth_client_id
   # puts Rails.application.credentials.google.google_oauth_client_secret
   config.omniauth :google_oauth2, Rails.application.credentials.google.google_oauth_client_id,
                   Rails.application.credentials.google.google_oauth_client_secret, scope: 'userinfo.email,userinfo.profile'
+  config.navigational_formats = ['/', :html, :turbo_stream]
+
 end

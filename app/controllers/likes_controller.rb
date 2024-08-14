@@ -1,22 +1,16 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
   before_action :set_image, :set_category
 
   def create
-    expecting_like = Like.find_by(user: current_user, image: @image)
+    create_like_command = CreateLikeCommand.new(current_user, @image, @category, request.url)
 
-    if expecting_like.nil?
-      @like = @image.likes.build
-      @like.user = current_user
-      if @like.save
-        redirect_to category_image_path(@category, @image)
-      else
-        render json: { error: 'Error creating like.' }, status: :unprocessable_entity
-      end
-    else
-      expecting_like.delete
+    if create_like_command.perform
       redirect_to category_image_path(@category, @image)
+    else
+      render json: { error: 'Error creating like' }, status: :unprocessable_entity
     end
-    
   end
 
   private

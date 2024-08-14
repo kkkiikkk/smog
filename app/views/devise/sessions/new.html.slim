@@ -13,6 +13,6 @@
       = f.label :remember_me, for: "remember_me"
       = f.check_box :remember_me, id: "remember_me"
   .actions
-    = f.submit "Log in", class: "btn-submit"
+    = f.submit "Log in", class: "btn-submit", method: :post, data: { turbo: false }
   div 
     = render "devise/shared/links"
