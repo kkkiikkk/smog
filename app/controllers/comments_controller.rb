@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @image.comments.build(comment_params)
     @comment.user = current_user
-    @action_description = 'add new comment'
+    @action_description = 'comments'
     recaptcha_success = verify_recaptcha(model: @comment)
 
     if recaptcha_success && @comment.save

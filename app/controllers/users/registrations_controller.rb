@@ -9,19 +9,19 @@ module Users
 
     def create
       super do
-        @action_description = 'new user sign up'
+        @action_description = 'navigation'
       end
     end
 
     def update
       super do
-        @action_description = 'edit user'
+        @action_description = 'navigation'
       end
     end
 
     def destroy
       super do
-        @action_description = 'delete user'
+        @action_description = 'navigation'
       end
     end
 

@@ -8,7 +8,7 @@ module Users
     def google_oauth2
       @user = User.create_from_provider_data(request.env['omniauth.auth'])
       if @user.persisted?
-        @action_description = 'signing via google'
+        @action_description = 'user sign in'
         sign_in_and_redirect @user
         set_flash_message(:notice, :success, kind: 'Google') if is_navigational_format?
       else

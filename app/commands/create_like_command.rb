@@ -25,7 +25,7 @@ class CreateLikeCommand < Command
   def create_like
     like = @image.likes.build(user: @user)
     if like.save
-      create_action('add like')
+      create_action('likes')
     else
       false
     end
@@ -33,7 +33,7 @@ class CreateLikeCommand < Command
 
   def delete_like
     expecting_like.destroy if expecting_like.present?
-    create_action('delete like')
+    create_action('likes')
   end
 
   def create_action(type)

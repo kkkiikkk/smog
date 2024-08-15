@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.includes(:category).where.not(category_id: nil).page(params[:page]).per(20)
-    @action_description = 'go to images by category'
+    @action_description = 'navigation'
   end
 
   def new
@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
-    @action_description = 'go to specefic image'
+    @action_description = 'navigation'
   end
 
   def create
@@ -23,7 +23,7 @@ class ImagesController < ApplicationController
     @image = @category.images.new(image_params)
     SubscriptionsJob.perform_now(@image, @category)
     if @image.save
-      @action_description = 'create new image'
+      @action_description = 'image'
       redirect_to category_image_path(@category, @image)
     else
       render 'new'
