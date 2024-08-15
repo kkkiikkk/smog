@@ -16,7 +16,7 @@ class SubscriptionsController < ApplicationController
 
   def destroy
     Subscription.delete_by(id: params[:id])
-    @action_description = 'unsubscribe'
+    @action_description = 'subscribe'
     redirect_to categories_path
   end
 

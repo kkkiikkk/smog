@@ -41,12 +41,12 @@ module Users
     end
 
     def new_action_signin
-      action_creator = ActionCreator.new('user signin', @request_url, current_user.email)
+      action_creator = ActionCreator.new('user sign in', @request_url, current_user.email)
       action_creator.create
     end
 
     def new_action_signout
-      action_creator = ActionCreator.new('user signout', @request_url, @signout_user.email)
+      action_creator = ActionCreator.new('user sign out', @request_url, @signout_user.email)
       action_creator.create
     end
   end
