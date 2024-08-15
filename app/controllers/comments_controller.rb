@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @action_description = 'comments'
     recaptcha_success = verify_recaptcha(model: @comment)
-
     if recaptcha_success && @comment.save
       redirect_to category_image_path(@category, @image), notice: 'Comment successfully created.'
     else

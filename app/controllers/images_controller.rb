@@ -45,8 +45,7 @@ class ImagesController < ApplicationController
   end
 
   def new_action
-    return if @action_description.nil?
-
+    return if @action_description.nil? || !current_user
     action_creator = ActionCreator.new(@action_description, request.url, current_user.email)
     action_creator.create
     @action_description = nil

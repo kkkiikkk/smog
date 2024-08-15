@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 class CreateLikeCommand < Command
-  def initialize(user, image, category, request_url)
+  def initialize(user, image, request_url)
     @user = user
     @image = image
-    @category = category
     @request_url = request_url
   end
 
