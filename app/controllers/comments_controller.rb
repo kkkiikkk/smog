@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_image, :set_request_url, :set_category, only: [:create]
+  before_action :set_image, :set_request_url, :authenticate_user!, :set_category, only: [:create]
   after_action  :new_action, only: %i[create]
 
   def create
