@@ -47,7 +47,7 @@ RSpec.describe ImagesController, type: :controller do
       it 'redirects to the created image' do
         post :create, params: { category_name: category_test.name,
                                 image: {
-                                  image: Rack::Test::UploadedFile.new('/home/developer/Documents/projects/ruby-tasts/smog/public/spaceTest.jpeg',
+                                  image: Rack::Test::UploadedFile.new('/Users/rostislavrudnovskij/Documents/Jobs/smog/public/spaceTest.jpeg',
                                                                       'image/jpeg'),
                                   category_name: category_test.name
                                 } }
