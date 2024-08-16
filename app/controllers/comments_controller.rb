@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-  before_action :set_image, :set_request_url, :set_category, only: [:create]
+  before_action :set_image, :set_request_url, :authenticate_user!, :set_category, only: [:create]
   after_action  :new_action, only: %i[create]
 
   def create
@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @action_description = 'comments'
     recaptcha_success = verify_recaptcha(model: @comment)
-
     if recaptcha_success && @comment.save
       redirect_to category_image_path(@category, @image), notice: 'Comment successfully created.'
     else
