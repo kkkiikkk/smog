@@ -5,6 +5,7 @@ class Category < ApplicationRecord
   friendly_id :name, use: :slugged
   has_many :images
   has_many :subscriptions
+  belongs_to :user
   validates :name, presence: true, uniqueness: true
 
   def self.ransackable_associations(_auth_object = nil)
