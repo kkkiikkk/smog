@@ -1,5 +1,6 @@
 @import "modal";
 @import "categories";
+@import "not_found";
 @import "bootstrap";
 @import "auth";
 @import "navbar";
@@ -51,7 +52,7 @@ input {
 .category-box {
   position: relative;
   width: 250px;
-  height: 250px;  /* Make it square */
+  height: 250px;
   background: url('path/to/your/image.jpg') no-repeat center center/cover;
   border-radius: 10px;
   overflow: hidden;

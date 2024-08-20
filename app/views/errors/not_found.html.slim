@@ -1,2 +1,4 @@
-h1 Errors#not_found
-p Find me in app/views/errors/not_found.html.slim
+div.notfound-container
+  h1.error-title 404
+  p.error-message The page you are looking for could not be found.
+  = link_to "Go Back to Home", root_path, class: "home-link"

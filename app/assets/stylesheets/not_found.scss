@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&family=Sato:wght@400;700&display=swap');
+$font-sato: 'Sato', sans-serif;
+$font-red-hat: 'Red Hat Display', sans-serif;
+
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: var(--bs-gray-900);
+}
+
+.error-title {
+  font-family: $font-sato;
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--bs-danger); /* Red for error */
+  margin: 0;
+  animation: pulse 2s infinite;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  color: var(--bs-secondary);
+  margin-bottom: 20px;
+}
+
+.home-link {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: var(--bs-primary);
+  color: var(--bs-white);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--bs-indigo);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
