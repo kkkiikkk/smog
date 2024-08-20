@@ -1,2 +1,4 @@
-h1 Errors#internal_server_error
-p Find me in app/views/errors/internal_server_error.html.slim
+div.error-container
+  h1.error-title 500
+  p.error-message An internal server error occurred. Please try again later.
+  = link_to "Go Back to Home", root_path, class: "home-link"
