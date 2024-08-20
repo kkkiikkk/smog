@@ -15,16 +15,16 @@ html
         #navbarText.collapse.navbar-collapse.order-2
           ul.navbar-nav.ms-auto.mb-2.mb-lg-0
             li.nav-item
-              = link_to "Home", root_path, class: "nav-link #{'active' if current_page?(root_path)}", aria: { current: "page" }
+              = link_to "Home", root_path, class: "nav-link #{'active' if current_page?(root_path)}", aria: { current: "page" }, data: { turbo: false }
             li.nav-item
-              = link_to "Explore", images_path, class: "nav-link #{'active' if current_page?(images_path)}"
+              = link_to "Explore", images_path, class: "nav-link #{'active' if current_page?(images_path)}", data: { turbo: false }
             - if user_signed_in?
               li.nav-item
-                = link_to "Add pin", new_image_path, class: "nav-link #{'active' if current_page?(new_image_path)}"
+                = link_to "Add pin", new_image_path, class: "nav-link #{'active' if current_page?(new_image_path)}", data: { turbo: false }
             li.nav-item
-              = link_to "Categories", categories_path, class: "nav-link #{'active' if current_page?(categories_path)}"
+              = link_to "Categories", categories_path, class: "nav-link #{'active' if current_page?(categories_path)}", data: { turbo: false }
             li.nav-item
-              = link_to "Profile", edit_user_registration_path, class: "nav-link #{'active' if current_page?(edit_user_registration_path)}"
+              = link_to "Profile", edit_user_registration_path, class: "nav-link #{'active' if current_page?(edit_user_registration_path)}", data: { turbo: false }
             li.nav-item
               - if user_signed_in?
                 = link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-signup"
