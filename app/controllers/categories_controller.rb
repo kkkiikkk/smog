@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
     @action_description = 'navigation'
     return unless @category.nil?
 
-    render json: { error: 'Category not found' }, status: :unprocessable_entity
+    render json: { error: 'Category not found' }, status: :not_found_entity
   end
 
   private

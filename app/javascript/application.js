@@ -6,4 +6,6 @@ import "popper"
 import "controllers"
 import "./upload.js"
 import "./modal.js"
-import "./rails_admin.js"
+// import "./rails_admin.js"
+// import 'rails_admin/dist/rails_admin.js';
+
