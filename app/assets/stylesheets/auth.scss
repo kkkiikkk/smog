@@ -423,3 +423,124 @@ $gray-300: #dee2e6;
   }
 
 }
+
+.edit-profile-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 10px;
+  background-color: #cfddee;
+
+  h2 {
+    font-family: $font-sato;
+    color: var(--bs-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .field {
+    margin-bottom: 1.5rem;
+
+    label {
+      font-family: $font-red-hat;
+      display: block;
+      font-weight: bold;
+      color: var(--bs-dark);
+    }
+
+    input {
+      font-family: $font-red-hat;
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 6px;
+      background-color: rgba(32, 52, 146, 0.1);
+      color: var(--bs-blue);
+      border: 1px solid var(--bs-gray-300);
+
+      &::placeholder {
+        color: var(--bs-blue);
+        opacity: 1;
+      }
+
+      &:focus {
+        border-color: var(--bs-primary);
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+      }
+    }
+
+    em {
+      font-family: $font-red-hat;
+      color: var(--bs-secondary);
+      font-size: 0.875rem;
+      margin-top: 0.5rem;
+      display: block;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: var(--bs-primary);
+      border: none;
+      border-radius: 0.25rem;
+      color: var(--bs-white);
+      font-family: $font-red-hat;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: var(--bs-primary);
+      }
+    }
+  }
+
+  h3 {
+    font-family: $font-sato;
+    color: var(--bs-danger);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  div {
+    text-align: center;
+
+    button {
+      background-color: var(--bs-danger);
+      color: var(--bs-white);
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-family: $font-red-hat;
+
+      &:hover {
+        background-color: var(--bs-danger);
+      }
+    }
+  }
+
+  .links {
+    text-align: center;
+    margin-top: 1.5rem;
+
+    a {
+      font-family: $font-red-hat;
+      color: var(--bs-info);
+      text-decoration: none;
+      font-size: 0.875rem;
+
+      &:hover {
+        color: var(--bs-primary);
+        text-decoration: underline;
+      }
+    }
+  }
+}
