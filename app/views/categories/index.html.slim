@@ -1,14 +1,15 @@
-.category-container
-  .category-wrapper
+div.category-container
+  div.category-wrapper
     - @categories.each do |category|
-        .category-box
-          .category-content
-            h1.category-title
-              = category[:name]
-            - if user_signed_in?
-              - if category.subscriptions.empty?
-                = button_to "Subscribe", category_subscriptions_path(category), data: { turbo_method: :post }, method: :post, class: "category-btn"
-              - else
-                = button_to "Unsubscribe", category_subscription_path(category, category.subscriptions[0]), data: { turbo_method: :delete }, method: :delete, class: "category-btn"
+      - first_image_url = category.images.first&.image&.url || 'default-image.jpg'
+      = link_to category_path(category.slug), class: 'category-box', style: "background-image: url('#{first_image_url}');" do
+        div.category-content
+          h1.category-title
+            = category[:name]
+          - if user_signed_in?
+            - if category.subscriptions.empty?
+              = button_to "Subscribe", category_subscriptions_path(category), data: { turbo_method: :post }, method: :post, class: "category-btn"
             - else
-              = button_to "Subscribe", new_user_session_path, data: { turbo: false }, method: :get, class: "category-btn"
+              = button_to "Unsubscribe", category_subscription_path(category, category.subscriptions[0]), data: { turbo_method: :delete }, method: :delete, class: "category-btn"
+          - else
+            = button_to "Subscribe", new_user_session_path, data: { turbo: false }, method: :get, class: "category-btn"
