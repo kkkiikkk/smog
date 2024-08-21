@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CategoriesController < ApplicationController
-  before_action :set_request_url, only: %i[index show]
+  before_action :set_request_url, :authenticate_user!, only: %i[index show]
   after_action  :new_action, only: %i[index show]
 
   def index

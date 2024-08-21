@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
-  database: smog_production
-  username: smog
-  password: <%= ENV["SMOG_DATABASE_PASSWORD"] %>
+  database: smogdb
+  username: smogdb
+  password: <%= ENV["DATABASE_URL"] %>
+# postgres://postgres:5e5f43ca5c2340a785b949bae51f912f@dokku-postgres-smogdb:5432/smogdb
