@@ -9,31 +9,40 @@ html
   body
     nav.navbar.navbar-expand-lg.bg-body-tertiary
       .container-fluid
-        = link_to "SMOG", root_path, class: "navbar-brand order-0"
         button.navbar-toggler.order-1 type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
           span.navbar-toggler-icon
         #navbarText.collapse.navbar-collapse.order-2
-          ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
             li.nav-item
-              = link_to "Home", root_path, class: "nav-link #{'active' if current_page?(root_path)}", aria: { current: "page" }, data: { turbo: false }
+              = link_to t('navigator.home'), root_path, class: "nav-link #{'active' if current_page?(root_path)}", aria: { current: "page" }, data: { turbo: false }
             li.nav-item
-              = link_to "Explore", images_path, class: "nav-link #{'active' if current_page?(images_path)}", data: { turbo: false }
+              = link_to t('navigator.explore'), images_path, class: "nav-link #{'active' if current_page?(images_path)}", data: { turbo: false }
             - if user_signed_in?
               li.nav-item
-                = link_to "Add pin", new_image_path, class: "nav-link #{'active' if current_page?(new_image_path)}", data: { turbo: false }
-            li.nav-item
-              = link_to "Categories", categories_path, class: "nav-link #{'active' if current_page?(categories_path)}", data: { turbo: false }
-            li.nav-item
-              = link_to "Profile", edit_user_registration_path, class: "nav-link #{'active' if current_page?(edit_user_registration_path)}", data: { turbo: false }
+                = link_to t('navigator.add_pin'), new_image_path, class: "nav-link #{'active' if current_page?(new_image_path)}", data: { turbo: false }
+              li.nav-item
+                = link_to t('navigator.category'), categories_path, class: "nav-link #{'active' if current_page?(categories_path)}", data: { turbo: false }
+              li.nav-item
+                = link_to t('navigator.profile'), edit_user_registration_path, class: "nav-link #{'active' if current_page?(edit_user_registration_path)}", data: { turbo: false }
+            li.nav-item.dropdown
+              a.nav-link.dropdown-toggle href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                = t('language')
+              ul.dropdown-menu aria-labelledby="languageDropdown"
+                li
+                  = link_to "English", url_for(locale: 'en'), class: "dropdown-item"
+                li
+                  = link_to "Українська", url_for(locale: 'ua'), class: "dropdown-item"
+          ul.navbar-nav.ms-auto
             li.nav-item
               - if user_signed_in?
-                = link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-signup"
+                = link_to t('navigator.log_out'), destroy_user_session_path, data: { turbo_method: :delete }, class: "btn-signup"
               - else 
-                = link_to "Sign up", new_user_registration_path, class: "btn-signup"
+                = link_to t('navigator.sign_up'), new_user_registration_path, class: "btn-signup"
+            
     div
       = yield
 
     footer.footer
       .footer-content
-        | Smog developed by 
+        = t('footer.developed_by')
         a href="https://github.com/kkkiikkk" target="_blank" kkkiikkk

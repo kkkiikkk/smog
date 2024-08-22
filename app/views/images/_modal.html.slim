@@ -8,22 +8,29 @@
             = image_tag image.image.url(:thumb), id: "modalImage", class: "fixed-dimensions"
             .like-section
               p
-                | Likes: #{image.likes.size}
+                | #{t('image_info.likes_title')}: #{image.likes.size}
               = button_to category_image_likes_path(category.slug, image), method: :post, class: "btn btn-link" do
                 = image_tag "like.svg", class: "like-image"
           .comments-container
-            h5 Comments
+            h5
+              = t('image_info.likes_title')
             .comment-form
               = form_with model: [category, image, Comment.new], local: true, html: { id: 'commentForm', data: { image_id: image.id } } do |f|
                 .form-group
                   = recaptcha_tags
                 .form-group
-                  = f.label :caption
+                  = f.label t('image_info.caption')
                   = f.text_area :caption, class: "form-control", rows: 3
                 .form-group
-                  = f.submit 'Add Comment', class: "btn btn-primary"
+                  = f.submit t('image_info.add_comment'), class: "btn btn-primary"
             .comments-list
               = render partial: 'comments/comments_list', locals: { comments: image.comments }
       .modal-footer
-        = link_to 'Close', category_path(category.slug), class: "btn btn-secondary"
+        = link_to t('image_info.close_image'), category_path(category.slug), class: "btn btn-secondary"
 .modal-backdrop.fade.show
+/ image_info: 
+/     comments_title: 'Коментарі'
+/     caption: 'Опис'
+/     add_comment: 'Додати коментар'
+/     close_image: 'Закрити'
+/     likes_title: 'Сподобалося'

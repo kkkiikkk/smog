@@ -1,0 +1,29 @@
+ua: 
+  language: 'Мова'
+  home: 
+    welcome_title: 'Вітаємо у SMOG'
+    welcome_description: 'Smog – це нова платформа для зберігання та обміну зображеннями з усіма. Ви можете коментувати або лайкати деякі фотографії, але для цього вам потрібно зареєструватися.'
+  navigator: 
+    category: 'Категорії'
+    home: 'Головна'
+    explore: 'Досліджувати'
+    profile: 'Мій профіль'
+    add_pin: 'Додати нову картинку'
+    log_out: 'Вийти'
+    sign_up: 'Створити новий акаунт'
+  footer:
+    developed_by: 'Створено розробником '
+  app_pin_page: 
+    category_input_label: 'Назва категорії'
+    category_recommend_text: 'Виберіть файл або перетягніть його'
+    image_upload_info: 'Ми рекомендуємо використовувати файли високої якості .jpg (розмір менше 20 МБ)'
+    submit_image: 'Завантажити'
+  categories: 
+    subscribe_button: 'Підписатись'
+    unsubscribe_button: 'Відписатись'
+  image_info: 
+    comments_title: 'Коментарі'
+    caption: 'Опис'
+    add_comment: 'Додати коментар'
+    close_image: 'Закрити'
+    likes_title: 'Сподобалося'
