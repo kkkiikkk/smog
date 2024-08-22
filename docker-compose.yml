@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+    environment:
+      DATABASE_URL: postgres://smog:postgres@db:5432/smog
+      REDIS_URL: redis://redis:6379
+
+  db:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: smog
+      POSTGRES_PASSWORD: postgres
+
+  redis:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
