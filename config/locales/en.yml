@@ -1,31 +1,67 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
+en: 
+  language: 'Language'
+  home: 
+    welcome_title: 'Welcome to SMOG'
+    welcome_description: 'Smog is a new platform for storing and sharing images with everyone. You can comment on or like some photos, but you need to register to do so.'
+  navigator: 
+    category: 'Categories'
+    home: 'Home'
+    explore: 'Explore'
+    profile: 'My Profile'
+    add_pin: 'Add Pin'
+    log_out: 'Log Out'
+    sign_up: 'Create New Account'
+  footer:
+    developed_by: 'Developed by '
+  app_pin_page: 
+    category_input_label: 'Category Name'
+    category_recommend_text: 'Select a file or drag it here'
+    image_upload_info: 'We recommend using high-quality .jpg files (size less than 20MB)'
+    submit_image: 'Upload'
+  categories: 
+    subscribe_button: 'Subscribe'
+    unsubscribe_button: 'Unsubscribe'
+  image_info: 
+    comments_title: 'Comments'
+    caption: 'Caption'
+    add_comment: 'Add Comment'
+    close_image: 'Close'
+    likes_title: 'Likes'
+  devise: 
+    sign_up:
+      email_placeholder: 'Email'
+      username_placeholder: 'Username'
+      new_password_placeholder: 'New password'
+      confirm_password: 'Confirm password'
+      submit_button: 'Sign up'
+      password_limit_warning: 'characters minimum'
+    links: 
+      log_in: 'Log in'
+      sign_up: 'Sign up'
+      forgot_password: 'Forgot your password?'
+      confirmation_instructions: 'Didnt receive confirmation instructions?'
+      unlock_instructions: 'Didnt receive unlock instructions?'
+      sign_in_with: 'Sign in with'
+    edit_profile: 
+      email_placeholder: 'Email'
+      username_placeholder: 'Username'
+      new_password_placeholder: 'Password'
+      confirm_password: 'Confirm password'
+      password_limit_warning: ' characters minimum'
+      current_password_placeholder: 'Current password'
+      submit_button: 'Update'
+      delete_account_button: 'Delete my account'
+      back_button: 'Back'
+      waiting_confiramtion: 'Currently waiting confirmation for'
+    login: 
+     email_placeholder: 'Email'
+     password_placeholder: 'Password'
+     submit_button: 'Log in'
+     remember_me_placeholder: 'Remember me'
+    confirmation: 
+      email_placeholder: 'Email'
+      submit_button: 'Resend confirmation instructions'
+    passwords: 
+      email_placeholder: 'Email'
+      submit_button: 'Send me reset password instructions'
 
-en:
-  hello: "Hello world"

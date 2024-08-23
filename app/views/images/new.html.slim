@@ -3,7 +3,7 @@
     .col-md-6
       = form_with model: @image, local: true, html: { multipart: true } do |f|
         .form-group
-          = f.label :category_name, "Category Name"
+          = f.label :category_name, t('app_pin_page.category_input_label')
           = f.text_field :category_name, class: "form-control"
         .image-preview.hidden
         .form-group.upload-container
@@ -11,8 +11,9 @@
           label for="file-upload"
             span.icon
               i class="fas fa-arrow-up"
-            span.text Select a file or drag it here
+            span.text 
+              = t('app_pin_page.category_recommend_text')
           .upload-info
-            | We recommend using high quality .jpg files (less than 20MB in size)
+            = t('app_pin_page.image_upload_info')
         .form-group
-          = f.submit 'Upload', class: 'signup-button', disabled: true
+          = f.submit t('app_pin_page.submit_image'), class: 'signup-button', disabled: true

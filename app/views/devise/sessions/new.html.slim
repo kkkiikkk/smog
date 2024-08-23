@@ -1,18 +1,18 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "auth-form log-in-form" }) do |f|
   .field
     br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email"
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: t('devise.login.email_placeholder')
   .field
     br/
-    = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password"
+    = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: t('devise.login.password_placeholder')
   .field
     br/
     = recaptcha_tags
   - if devise_mapping.rememberable?
     .field.checkbox-field
-      = f.label :remember_me, for: "remember_me"
+      = f.label t('devise.login.remember_me_placeholder'), for: "remember_me"
       = f.check_box :remember_me, id: "remember_me"
   .actions
-    = f.submit "Log in", class: "btn-submit", method: :post, data: { turbo: false }
+    = f.submit t('devise.login.submit_button'), class: "btn-submit", method: :post, data: { turbo: false }
   div 
     = render "devise/shared/links"
