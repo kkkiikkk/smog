@@ -27,3 +27,40 @@ ua:
     add_comment: 'Додати коментар'
     close_image: 'Закрити'
     likes_title: 'Сподобалося'
+  devise: 
+    sign_up:
+      email_placeholder: 'Пошта'
+      username_placeholder: 'Імя користувача'
+      new_password_placeholder: 'Новий пароль'
+      confirm_password: 'Підтвердити пароль'
+      submit_button: 'Зареєструватися'
+      password_limit_warning: 'символів мінімум'
+    links: 
+      log_in: 'Увійти'
+      sign_up: 'Зареєструватися'
+      forgot_password: 'Забули пароль?'
+      confirmation_instructions: 'Не отриамли інструкції для підтвердження пошти?'
+      unlock_instructions: 'На отримали інструкції для розблокування'
+      sign_in_with: 'Увійти за допомогою'
+    edit_profile: 
+      email_placeholder: 'Пошта'
+      username_placeholder: 'Імя користувача'
+      new_password_placeholder: 'Пароль'
+      confirm_password: 'Підтвердити пароль'
+      password_limit_warning: ' символів мінімум'
+      current_password_placeholder: 'Дійсний пароль'
+      submit_button: 'Оновити'
+      delete_account_button: 'Видалити мій акаунт'
+      back_button: 'Назад'
+      waiting_confiramtion: 'Зараз очікується підтвердження для'
+    login: 
+     email_placeholder: 'Пошта'
+     password_placeholder: 'Пароль'
+     submit_button: 'Увійти'
+     remember_me_placeholder: 'Запамятати мене'
+    confirmation: 
+      email_placeholder: 'Пошта'
+      submit_button: 'Повторно надішліть інструкції для підтвердження'
+    passwords: 
+      email_placeholder: 'Пошта'
+      submit_button: 'Надішліть мені інструкції щодо зміни пароля'

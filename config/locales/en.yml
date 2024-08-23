@@ -27,3 +27,41 @@ en:
     add_comment: 'Add Comment'
     close_image: 'Close'
     likes_title: 'Likes'
+  devise: 
+    sign_up:
+      email_placeholder: 'Email'
+      username_placeholder: 'Username'
+      new_password_placeholder: 'New password'
+      confirm_password: 'Confirm password'
+      submit_button: 'Sign up'
+      password_limit_warning: 'characters minimum'
+    links: 
+      log_in: 'Log in'
+      sign_up: 'Sign up'
+      forgot_password: 'Forgot your password?'
+      confirmation_instructions: 'Didnt receive confirmation instructions?'
+      unlock_instructions: 'Didnt receive unlock instructions?'
+      sign_in_with: 'Sign in with'
+    edit_profile: 
+      email_placeholder: 'Email'
+      username_placeholder: 'Username'
+      new_password_placeholder: 'Password'
+      confirm_password: 'Confirm password'
+      password_limit_warning: ' characters minimum'
+      current_password_placeholder: 'Current password'
+      submit_button: 'Update'
+      delete_account_button: 'Delete my account'
+      back_button: 'Back'
+      waiting_confiramtion: 'Currently waiting confirmation for'
+    login: 
+     email_placeholder: 'Email'
+     password_placeholder: 'Password'
+     submit_button: 'Log in'
+     remember_me_placeholder: 'Remember me'
+    confirmation: 
+      email_placeholder: 'Email'
+      submit_button: 'Resend confirmation instructions'
+    passwords: 
+      email_placeholder: 'Email'
+      submit_button: 'Send me reset password instructions'
+

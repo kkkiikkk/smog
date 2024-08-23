@@ -2,22 +2,21 @@
   = render "devise/shared/error_messages", resource: resource
   .field
     br/
-    = f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", class: "form-control"
+    = f.email_field :email, autofocus: true, placeholder: t('devise.sign_up.email_placeholder'), autocomplete: "email", class: "form-control"
   .field
     br/
-    = f.text_field :username, autocomplete: "username", placeholder: "Username", class: "form-control"
+    = f.text_field :username, autocomplete: "username", placeholder: t('devise.sign_up.username_placeholder'), class: "form-control"
   .field
     - if @minimum_password_length
       em
-        | (#{@minimum_password_length} characters minimum)
+        | (#{@minimum_password_length} #{t('devise.sign_up.password_limit_warning')})
     br/
-    = f.password_field :password, autocomplete: "new-password", placeholder: "New password", class: "form-control"
+    = f.password_field :password, autocomplete: "new-password", placeholder: t('devise.sign_up.new_password_placeholder'), class: "form-control"
   .field
     br/
-    = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: "form-control"
+    = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t('devise.sign_up.confirm_password'), class: "form-control"
   .actions
-    = f.submit "Sign up", class: "btn-submit"
+    = f.submit t('devise.sign_up.submit_button'), class: "btn-submit"
   div 
     div
-      / = link_to "Google auth", user_google_oauth2_omniauth_authorize_path
     = render "devise/shared/links"

@@ -2,43 +2,44 @@
   = render "devise/shared/error_messages", resource: resource
 
   .field
-    = f.label :email
+    = f.label t('devise.edit_profile.email_placeholder')
     br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
 
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
-      | Currently waiting confirmation for: #{resource.unconfirmed_email}
+      | #{t('devise.edit_profile.waiting_confiramtion')}: #{resource.unconfirmed_email}
 
   .field
-    = f.label :username
+    = f.label t('devise.edit_profile.username_placeholder')
     br/
     = f.text_field :username, autocomplete: "username"
 
   .field
-    = f.label :password
+    = f.label t('devise.edit_profile.new_password_placeholder')
     br/
     = f.password_field :password, autocomplete: "new-password"
     - if @minimum_password_length
       br/
       em
         = @minimum_password_length
-        | characters minimum
+        | #{t('devise.edit_profile.password_limit_warning')}
 
   .field
-    = f.label :password_confirmation
+    = f.label t('devise.edit_profile.confirm_password')
     br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
 
   .field
-    = f.label :current_password
+    = f.label t('devise.edit_profile.current_password_placeholder')
     br/
     = f.password_field :current_password, autocomplete: "current-password"
 
   .actions
-    = f.submit "Update"
-  h3 Delete my account
+    = f.submit t('devise.edit_profile.submit_button')
+  h3 
+    = t('devise.edit_profile.delete_account_button')
   div
-    = button_to "Delete my account", user_registration_path, data: { turbo_method: :delete }, method: :delete
+    = button_to t('devise.edit_profile.delete_account_button'), user_registration_path, data: { turbo_method: :delete }, method: :delete
 
-    = link_to "Back", :back, class: "form-link"
+    = link_to t('devise.edit_profile.back_button'), :back, class: "form-link"

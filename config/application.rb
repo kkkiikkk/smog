@@ -23,7 +23,7 @@ module Smog
     config.active_job.queue_adapter = :resque
     config.action_dispatch.cookies_same_site_protection = :none
     config.action_controller.default_protect_from_forgery = false if ENV['RAILS_ENV'] == 'development'
-    config.i18n.default_locale = :ua
+    config.i18n.default_locale = :en
     config.i18n.available_locales = [:en, :ua]
     config.i18n.fallbacks = true
 
