@@ -1,5 +1,3 @@
-version: '3.2'
-
 services:
   web:
     build: .
@@ -12,7 +10,8 @@ services:
       - redis
     environment:
       DATABASE_URL: postgres://smog:postgres@db:5432/smog
-      REDIS_URL: redis://redis:6379
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
 
   db:
     image: postgres:14
@@ -28,6 +27,5 @@ services:
     image: redis:7.0
     ports:
       - "6379:6379"
-
 volumes:
   postgres_data:
