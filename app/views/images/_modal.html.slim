@@ -13,7 +13,7 @@
                 = image_tag "like.svg", class: "like-image"
           .comments-container
             h5
-              = t('image_info.likes_title')
+              = t('image_info.comments_title')
             .comment-form
               = form_with model: [category, image, Comment.new], local: true, html: { id: 'commentForm', data: { image_id: image.id } } do |f|
                 .form-group
@@ -28,9 +28,3 @@
       .modal-footer
         = link_to t('image_info.close_image'), category_path(category.slug), class: "btn btn-secondary"
 .modal-backdrop.fade.show
-/ image_info: 
-/     comments_title: 'Коментарі'
-/     caption: 'Опис'
-/     add_comment: 'Додати коментар'
-/     close_image: 'Закрити'
-/     likes_title: 'Сподобалося'
