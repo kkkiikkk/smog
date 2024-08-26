@@ -37,7 +37,8 @@ class ImageParser
 
   def create_image(category_name, image_path)
     category = Category.find_or_create_by(name: category_name)
-    image = Image.new(category:)
+    image = Image.new
+    image.category = category
     image.image = File.open(image_path)
 
     if image.save
