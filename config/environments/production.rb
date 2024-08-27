@@ -87,9 +87,12 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
-  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
+
+  config.consider_all_requests_local = false
+
+  config.action_dispatch.show_exceptions = :all
 
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
