@@ -26,4 +26,4 @@ ENV PATH="/app/bin:/app/vendor/bundle/bin:$PATH"
 
 EXPOSE 3000
 
-CMD ["bundle", "exec", "RAILS_ENV=production" "rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
