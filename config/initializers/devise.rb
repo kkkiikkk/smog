@@ -314,7 +314,7 @@ Devise.setup do |config|
   # puts Rails.application.credentials.google.google_oauth_client_secret
   config.omniauth :google_oauth2, Rails.application.credentials.google.google_oauth_client_id,
                   Rails.application.credentials.google.google_oauth_client_secret, scope: 'userinfo.email,userinfo.profile'
-  config.navigational_formats = ['*/*', :html]
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
 
 end

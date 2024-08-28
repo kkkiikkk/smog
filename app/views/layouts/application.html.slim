@@ -18,11 +18,11 @@ html
               = link_to t('navigator.home'), root_path, class: "nav-link #{'active' if current_page?(root_path)}", aria: { current: "page" }, data: { turbo: false }
             li.nav-item
               = link_to t('navigator.explore'), images_path, class: "nav-link #{'active' if current_page?(images_path)}", data: { turbo: false }
+            li.nav-item
+              = link_to t('navigator.category'), categories_path, class: "nav-link #{'active' if current_page?(categories_path)}", data: { turbo: false }
             - if user_signed_in?
               li.nav-item
                 = link_to t('navigator.add_pin'), new_image_path, class: "nav-link #{'active' if current_page?(new_image_path)}", data: { turbo: false }
-              li.nav-item
-                = link_to t('navigator.category'), categories_path, class: "nav-link #{'active' if current_page?(categories_path)}", data: { turbo: false }
               li.nav-item
                 = link_to t('navigator.profile'), edit_user_registration_path, class: "nav-link #{'active' if current_page?(edit_user_registration_path)}", data: { turbo: false }
             li.nav-item.dropdown

@@ -4,9 +4,5 @@
       - if image.image.url.present?
         .col-md-4
           .pinterest-item
-            - if user_signed_in?
-              a href=category_image_path(image.category.slug, image) data-image-url=image.image.url data-index=index data-turbo="false"
-                = image_tag image.image.url, alt: "Image", class: "img-fluid pinterest-image"
-            - else 
-              a href=new_user_session_path data-image-url=image.image.url data-index=index data-turbo="false"
-                = image_tag image.image.url, alt: "Image", class: "img-fluid pinterest-image"
+            a href=category_image_path(image.category.slug, image) data-image-url=image.image.url data-index=index data-turbo="false"
+              = image_tag image.image.url, alt: "Image", class: "img-fluid pinterest-image"

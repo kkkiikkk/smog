@@ -3,6 +3,7 @@
 class ImagesController < ApplicationController
   before_action :set_category, only: %i[show]
   after_action :new_action, only: %i[index create show]
+  before_action :authenticate_user!, only: %i[create]
 
   def index
     @images = Image.includes(:category).where.not(category_id: nil).page(params[:page]).per(20)

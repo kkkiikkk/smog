@@ -3,6 +3,8 @@
 class SubscriptionsController < ApplicationController
   before_action :set_category, :set_request_url
   after_action  :new_action, only: %i[create destroy]
+  before_action :authenticate_user!
+  
 
   def create
     @subscription = @category.subscriptions.new(user: current_user)

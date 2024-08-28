@@ -5,14 +5,7 @@ class CategoriesController < ApplicationController
   after_action  :new_action, only: %i[index show]
 
   def index
-    if current_user
-      @categories = Category.left_joins(:subscriptions)
-                            .select('categories.*, subscriptions.id AS subscription_id')
-                            .where('subscriptions.user_id = ? OR subscriptions.id IS NULL', current_user.id)
-                            .distinct
-    else
-      @categories = Category.all
-    end
+    @categories = Category.all
     @action_description = 'navigation'
   end
 

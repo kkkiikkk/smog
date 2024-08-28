@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class LikesController < ApplicationController
-  before_action :set_image, :set_category, :authenticate_user!
+  before_action :set_image, :set_category
+  before_action :authenticate_user!
 
   def create
     create_like_command = CreateLikeCommand.new(current_user, @image, request.url)
