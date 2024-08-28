@@ -17,7 +17,7 @@
             .comment-form
               = form_with model: [category, image, Comment.new], local: true, html: { id: 'commentForm', data: { image_id: image.id } } do |f|
                 .form-group
-                  = recaptcha_tags
+                  = render 'shared/recaptcha'
                 .form-group
                   = f.label t('image_info.caption')
                   = f.text_area :caption, class: "form-control", rows: 3
