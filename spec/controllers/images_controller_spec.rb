@@ -4,7 +4,6 @@ require 'rails_helper'
 require_relative '../support/devise'
 
 RSpec.describe ImagesController, type: :controller do
-
   describe 'GET #index' do
     login_user
 
@@ -40,7 +39,7 @@ RSpec.describe ImagesController, type: :controller do
 
   describe 'POST #create' do
     login_user
-  
+
     let(:category_test) { create(:category) }
 
     context 'successful response' do
@@ -55,17 +54,5 @@ RSpec.describe ImagesController, type: :controller do
         expect(response).to redirect_to(category_image_path(category_test, created_image))
       end
     end
-
-    # context 'failed response, bad request' do
-    #   it 'returns error' do 
-    #     post :create, params: { category_name: 'wrong_category',
-    #                             image: {
-    #                               image: 'sdada',
-    #                               category_name: 'wrong_category'
-    #                             } }
-    #     created_image = Image.last
-    #     expect(response).to raise_error(ActionController::UrlGenerationError)
-    #   end
-    # end
   end
 end

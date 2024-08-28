@@ -27,6 +27,7 @@ class CategoriesController < ApplicationController
   def new_action
     return if @action_description.nil?
     return if current_user.nil?
+
     action_creator = ActionCreator.new(@action_description, @request_url, current_user.email)
     action_creator.create
     @action_description = nil

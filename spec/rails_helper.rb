@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
-require 'support/controller_macros.rb'
+require 'support/controller_macros'
 # require 'support/factory_bot'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 RSpec.configure do |config|

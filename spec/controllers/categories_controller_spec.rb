@@ -28,10 +28,10 @@ RSpec.describe CategoriesController, type: :controller do
       end
     end
 
-    context 'bad response' do 
+    context 'bad response' do
       it 'returns not found expection' do
         expect do
-          get :show, params: { id: 10010101010 }          
+          get :show, params: { id: 10_010_101_010 }
         end.to raise_error(ActiveRecord::RecordNotFound)
       end
     end

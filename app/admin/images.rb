@@ -1,15 +1,11 @@
-ActiveAdmin.register Image do
+# frozen_string_literal: true
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
+ActiveAdmin.register Image do
   permit_params :image, :category_id
 
   index do
     column :id do |image|
-      link_to "#{image.id}", admin_image_path(image)
+      link_to image.id.to_s, admin_image_path(image)
     end
     column :category
     column :image do |image|
@@ -26,16 +22,5 @@ ActiveAdmin.register Image do
       end
     end
     active_admin_comments_for(resource)
-
   end
-
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:image, :category_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
 end

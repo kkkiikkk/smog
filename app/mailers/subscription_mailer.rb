@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SubscriptionMailer < ApplicationMailer
   default from: 'ruddnovskiy@gmail.com'
 

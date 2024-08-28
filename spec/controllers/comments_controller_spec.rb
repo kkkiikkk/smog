@@ -11,7 +11,8 @@ RSpec.describe CommentsController, type: :controller do
       let(:category_test) { create(:category) }
       let(:image_test) { create(:image, category: category_test) }
       it 'returns new comment' do
-        post :create, params: { category_id: category_test.id, image_id: image_test.id, comment: { caption: "NEW CAPTION" } }
+        post :create,
+             params: { category_id: category_test.id, image_id: image_test.id, comment: { caption: 'NEW CAPTION' } }
 
         comment = Comment.last
         expect(comment.caption).to eq('NEW CAPTION')
@@ -22,8 +23,8 @@ RSpec.describe CommentsController, type: :controller do
       let(:category_test) { create(:category) }
       let(:image_test) { create(:image, category: category_test) }
       it 'returns new comment' do
-        expect do 
-          post :create, params: { category_id: category_test.id, image_id: image_test.id}
+        expect do
+          post :create, params: { category_id: category_test.id, image_id: image_test.id }
         end.to raise_error(ActionController::ParameterMissing)
       end
     end

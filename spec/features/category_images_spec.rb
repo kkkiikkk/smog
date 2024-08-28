@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "Category Images", type: :feature do
+RSpec.feature 'Category Images', type: :feature do
   let(:category) { create(:category) }
-  let!(:images) { create_list(:image, 15, category: category) }
+  let!(:images) { create_list(:image, 15, category:) }
   let(:user) { create(:user) }
-  
+
   before do
     sign_in user
   end
-  
-  scenario "displays category name and image list with pagination" do
+
+  scenario 'displays category name and image list with pagination' do
     visit category_path(category.slug)
 
     within('.content-wrapper') do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Subscription, type: :model do
@@ -5,9 +7,9 @@ RSpec.describe Subscription, type: :model do
     FactoryBot.create(:user)
     let(:category_test) { create(:category, user: User.last) }
 
-    subject(:subscription_test) { Subscription.new(category: category, user: user) }
+    subject(:subscription_test) { Subscription.new(category:, user:) }
 
-    context 'when subscription is valid' do 
+    context 'when subscription is valid' do
       let(:category) { category_test }
       let(:user) { User.last }
 
@@ -16,7 +18,7 @@ RSpec.describe Subscription, type: :model do
       end
     end
 
-    context 'when subscription category is invalid' do 
+    context 'when subscription category is invalid' do
       let(:category) { nil }
       let(:user) { User.last }
 
@@ -25,7 +27,7 @@ RSpec.describe Subscription, type: :model do
       end
     end
 
-    context 'when subscription user is invalid' do 
+    context 'when subscription user is invalid' do
       let(:category) { category_test }
       let(:user) { nil }
 

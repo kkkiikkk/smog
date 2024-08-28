@@ -1,18 +1,5 @@
-ActiveAdmin.register Action do
+# frozen_string_literal: true
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
+ActiveAdmin.register Action do
   permit_params :action_type, :email, :url, :timestamp
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:action_type, :email, :url, :timestamp]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  
 end
