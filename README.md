@@ -1,24 +1,62 @@
-# README
+# Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[smog.pp.ua](https://smog.pp.ua)
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+```shell
+git clone git@github.com:kkkiikkk/smog.git
+cd smog
+```
 
-* Configuration
+### Check your Ruby version
 
-* Database creation
+```shell
+ruby -v
+```
 
-* Database initialization
+The ouput should start with something like `ruby 3.2.3`
 
-* How to run the test suite
+If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+rbenv install 3.2.3
+```
 
-* Deployment instructions
+### Install dependencies
 
-* ...
+Using [Bundler](https://github.com/bundler/bundler)
+
+```shell
+bundle
+```
+
+### Initialize the database
+
+```shell
+rails db:create db:migrate db:seed
+rake app:migrate_images
+```
+## Serve
+
+```shell
+rails s
+```
+
+## Deploy
+Docker and docker compose should be installed
+```shell
+ssh user@IP
+cd /var/www/
+```
+Clone the git repository
+```shell
+cd smog
+docker compose build
+docker compose run web rails db:create db:migrate db:seed
+docker compose run web rails asssets:precompile
+docker compose run web rails app:migrate_images
+docker compose up -d
+```
