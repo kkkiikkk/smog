@@ -1,6 +1,30 @@
-# Project
+# SMOG
 
 [smog.pp.ua](https://smog.pp.ua)
+
+# System Requirements
+Before you start, make sure your system meets the following requirements:
+
+Ruby
+- Ruby version: 3.2.3
+- Rbenv: Recommended for managing Ruby versions (rbenv)
+
+Databases
+- PostgreSQL: Required for Active Record
+
+JavaScript and CSS
+- Bootstrap: Version 5.2 or later
+
+Templating and View
+- Slim: Lightweight templating engine
+ -Slim-Rails: Integration with Rails
+
+File Uploads
+- CarrierWave: For file uploads, including image processing
+
+User Authentication
+- Devise: User authentication solution
+
 
 ## Install
 
